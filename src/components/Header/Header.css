@@ -14,11 +14,17 @@ header {
   flex-direction: column;
   justify-content: flex-start;
 }
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
 #logo {
   width: 150px;
   height: 36px;
-  margin-bottom: -2px;
 }
 
 .welcome,
@@ -27,7 +33,7 @@ header {
   line-height: 19.36px;
   letter-spacing: -2%;
   font-weight: 500;
-  margin-bottom: -4px;
+  margin: 8px;
 }
 
 .date {
