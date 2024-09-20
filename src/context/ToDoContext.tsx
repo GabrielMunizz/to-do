@@ -13,7 +13,7 @@ type ToDoContextType = {
   saveTask: (newTask: string) => void;
   taskId: number | null;
   setTaskId: Dispatch<SetStateAction<number | null>>;
-  deleteTask: (taskId: number) => void;
+  deleteTask: (taskId: number | null) => void;
 };
 
 export const TodoContext = createContext({} as ToDoContextType);
@@ -29,13 +29,15 @@ export const TodoProvider = ({ children }: TodoProviderType) => {
   const [tasks, setTasks] = useState<TaskType[]>([]);
 
   const saveTask = (newTask: string) => {
-    const addNewTask = [...tasks, { id: tasks.length + 1, toDo: newTask }];
+    const id = tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1;
+    const addNewTask = [...tasks, { id, toDo: newTask }];
 
     localStorage.setItem("tasks", JSON.stringify(addNewTask));
     setTasks(addNewTask);
+    setIsModalOpen(false);
   };
 
-  const deleteTask = (taskId: number) => {
+  const deleteTask = (taskId: number | null) => {
     const isTaskSaved = localStorage.getItem("tasks");
     if (isTaskSaved) {
       const loadedTasks: TaskType[] = JSON.parse(isTaskSaved);
@@ -44,6 +46,7 @@ export const TodoProvider = ({ children }: TodoProviderType) => {
       localStorage.setItem("tasks", JSON.stringify(filteredTasks));
       setTasks(filteredTasks);
       setTaskId(null);
+      setWantToDelete(false);
     }
   };
   return (
