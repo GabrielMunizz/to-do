@@ -22,7 +22,11 @@ export default function Tasks() {
         </div>
         <div>
           {tasks.length !== 0 ? (
-            tasks.map(({ toDo, id }) => <Task key={id}>{toDo}</Task>)
+            tasks.map(({ toDo, id }) => (
+              <Task key={id} id={id}>
+                {toDo}
+              </Task>
+            ))
           ) : (
             <p>Nenhuma tarefa adicionada</p>
           )}

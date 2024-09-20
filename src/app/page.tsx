@@ -1,4 +1,4 @@
-import AddTaskModal from "@/components/AddTaskModal/AddTaskModal";
+import AddTaskModal from "@/components/Modals/AddTaskModal/AddTaskModal";
 import Header from "@/components/Header/Header";
 import Tasks from "@/components/Tasks/Tasks";
 

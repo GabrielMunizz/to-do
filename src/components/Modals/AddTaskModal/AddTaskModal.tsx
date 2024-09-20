@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext, useState } from "react";
-import Button from "../Button/Button";
+import Button from "../../Button/Button";
 import { TodoContext } from "@/context/ToDoContext";
 
 export default function AddTaskModal() {
