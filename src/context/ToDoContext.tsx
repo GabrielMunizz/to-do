@@ -30,7 +30,7 @@ export const TodoProvider = ({ children }: TodoProviderType) => {
 
   const saveTask = (newTask: string) => {
     const id = tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1;
-    const addNewTask = [...tasks, { id, toDo: newTask }];
+    const addNewTask = [...tasks, { id, toDo: newTask, checked: false }];
 
     localStorage.setItem("tasks", JSON.stringify(addNewTask));
     setTasks(addNewTask);
