@@ -1,16 +1,12 @@
 "use client";
-import { TaskType } from "../../utils/types";
-import { useState, useEffect } from "react";
+
+import { useEffect, useContext } from "react";
 import Task from "./Task/Task";
+import { TodoContext } from "@/context/ToDoContext";
+import Button from "../Button/Button";
 
 export default function Tasks() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [tasks, setTasks] = useState<TaskType[]>([]);
-
-  const saveTask = (newTask: string) => {
-    const addNewTask = [...tasks, { id: tasks.length + 1, toDo: newTask }];
-    setTasks(addNewTask);
-  };
+  const { setTasks, setIsModalOpen, tasks } = useContext(TodoContext);
 
   useEffect(() => {
     const savedTasks = localStorage.getItem("tasks");
@@ -32,6 +28,9 @@ export default function Tasks() {
           )}
         </div>
       </div>
+      <Button onClick={() => setIsModalOpen(true)}>
+        Adicionar nova tarefa
+      </Button>
     </section>
   );
 }

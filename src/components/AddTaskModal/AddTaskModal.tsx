@@ -1,21 +1,43 @@
-import { Dispatch, SetStateAction } from "react";
+"use client";
+
+import { useContext, useState } from "react";
 import Button from "../Button/Button";
+import { TodoContext } from "@/context/ToDoContext";
 
-type AddTaskModalProps = {
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
-};
+export default function AddTaskModal() {
+  const [newTask, setNewTask] = useState("");
+  const { setIsModalOpen, isModalOpen, saveTask } = useContext(TodoContext);
 
-export default function AddTaskModal({ setIsModalOpen }: AddTaskModalProps) {
+  const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = target;
+    setNewTask(value);
+  };
+
+  const handleSaveTask = () => {
+    saveTask(newTask);
+    setNewTask("");
+  };
+
+  console.log(newTask);
   return (
-    <div>
-      <h2>Nova tarefa</h2>
+    isModalOpen && (
       <div>
-        <label htmlFor="newTask">Título</label>
-        <input id="newTask" type="text" placeholder="Digite" />
+        <h2>Nova tarefa</h2>
+        <div>
+          <label htmlFor="newTask">Título</label>
+          <input
+            id="newTask"
+            type="text"
+            value={newTask}
+            placeholder="Digite"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <Button onClick={() => setIsModalOpen(false)}>Cancelar</Button>
+          <Button onClick={handleSaveTask}>Adicionar</Button>
+        </div>
       </div>
-      <div>
-        <Button onClick={() => setIsModalOpen(false)}>Cancelar</Button>
-      </div>
-    </div>
+    )
   );
 }

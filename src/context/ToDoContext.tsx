@@ -1,3 +1,5 @@
+"use client";
+
 import { TaskType } from "@/utils/types";
 import { createContext, Dispatch, SetStateAction, useState } from "react";
 
@@ -21,6 +23,7 @@ export const TodoProvider = ({ children }: TodoProviderType) => {
 
   const saveTask = (newTask: string) => {
     const addNewTask = [...tasks, { id: tasks.length + 1, toDo: newTask }];
+    localStorage.setItem("tasks", JSON.stringify(addNewTask));
     setTasks(addNewTask);
   };
 
