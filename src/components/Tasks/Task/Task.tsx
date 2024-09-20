@@ -5,6 +5,7 @@ import trashBin from "../../../assets/trash.png";
 import { useContext, useState } from "react";
 import { TodoContext } from "@/context/ToDoContext";
 import { TaskType } from "@/utils/types";
+import "./Task.scss";
 
 type TaskProps = {
   id: number;
@@ -40,8 +41,9 @@ export default function Task({ children, id }: TaskProps) {
   };
 
   return (
-    <div>
+    <div className="taskContainer">
       <input
+        className="checkbox"
         type="checkbox"
         name="checkTask"
         id="checkTask"
@@ -50,7 +52,7 @@ export default function Task({ children, id }: TaskProps) {
       />
       <p>{children}</p>
       <button onClick={handleWantToDelete}>
-        <Image src={trashBin} alt="trash bin icon" />
+        <Image className="buttonImage" src={trashBin} alt="trash bin icon" />
       </button>
     </div>
   );

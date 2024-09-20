@@ -1,12 +1,28 @@
-body {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: "Inter_Tight", sans-serif;
   box-sizing: border-box;
+  height: 100%;
 }
 
+@mixin text-styles {
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: -2%;
+  font-weight: 400;
+}
+
+// Text colors
+$black-half-opacity: #0000008a;
+$pure-black: #000;
+$sky-blue: #0796d3;
+$light-blue: #a0dcf6;
+
 // Borders
-$border-color: #d7dde9;
+$border-color: #eaecf0;
+$hr-color: #d7dde9;
 
 // Responsive breakpoints
 $breakpoint-md: 768px;

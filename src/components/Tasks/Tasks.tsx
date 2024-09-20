@@ -4,6 +4,7 @@ import { useEffect, useContext } from "react";
 import Task from "./Task/Task";
 import { TodoContext } from "@/context/ToDoContext";
 import Button from "../Button/Button";
+import "./Tasks.scss";
 
 export default function Tasks() {
   const { setTasks, setIsModalOpen, tasks } = useContext(TodoContext);
@@ -16,11 +17,11 @@ export default function Tasks() {
   }, []);
   return (
     <section>
-      <div>
+      <div className="mainContent">
         <div>
-          <p>Suas tarefas de hoje</p>
+          <p className="subText">Suas tarefas de hoje</p>
         </div>
-        <div>
+        <div className="tasksContainer">
           {tasks.length !== 0 ? (
             tasks.map(({ toDo, id }) => (
               <Task key={id} id={id}>
@@ -28,7 +29,7 @@ export default function Tasks() {
               </Task>
             ))
           ) : (
-            <p>Nenhuma tarefa adicionada</p>
+            <p className="subText">Nenhuma tarefa adicionada</p>
           )}
         </div>
       </div>

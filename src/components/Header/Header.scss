@@ -23,21 +23,29 @@ header {
 
 .welcome,
 .date {
-  size: 16px;
-  line-height: 19.36px;
-  letter-spacing: -2%;
+  @include text-styles;
   font-weight: 500;
   margin: 8px;
 }
 
+.welcome {
+  @media (min-width: $breakpoint-md) {
+    font-size: 24px;
+  }
+}
+
 .date {
-  color: #0000008a;
+  color: $black-half-opacity;
   font-weight: 400;
   margin-bottom: 20px;
+
+  @media (min-width: $breakpoint-md) {
+    margin-bottom: 8px;
+  }
 }
 
 hr {
   border: none;
-  border-top: 1px solid $border-color;
+  border-top: 1px solid $hr-color;
   width: 100%;
 }

@@ -1,0 +1,56 @@
+@import "../../../app/globals.scss";
+
+.taskContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  border: 2px dashed $hr-color;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.taskContainer p {
+  @include text-styles;
+  margin: 0 16px;
+}
+
+.taskContainer button,
+.buttonImage {
+  width: 24px;
+  height: 24px;
+}
+
+.taskContainer button {
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+}
+
+.checkbox {
+  width: 24px;
+  height: 24px;
+  appearance: none;
+  border: 1px solid $hr-color;
+  border-radius: 4px;
+  position: relative;
+}
+
+.checkbox:checked {
+  background-color: $light-blue;
+  border-color: $sky-blue;
+}
+
+.checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 7.5px;
+  width: 5px;
+  height: 10px;
+  border: solid $sky-blue;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
