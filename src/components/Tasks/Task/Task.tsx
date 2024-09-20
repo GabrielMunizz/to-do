@@ -18,6 +18,7 @@ export default function Task({ children, id }: TaskProps) {
     localStorage.getItem("tasks") as string
   );
   const isTaskChecked = savedTasks[id - 1].checked;
+  console.log("ID", id, "CHECKED", isTaskChecked);
 
   const [isChecked, setIsChecked] = useState(isTaskChecked);
 
@@ -28,9 +29,9 @@ export default function Task({ children, id }: TaskProps) {
       task.id === id ? { ...task, checked: updatedCheck } : task
     );
 
-    setIsChecked(updatedCheck);
-
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+
+    setIsChecked(updatedCheck);
   };
 
   const handleWantToDelete = () => {
