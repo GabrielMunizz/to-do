@@ -1,7 +1,8 @@
 "use client";
 
 import { useContext, useState } from "react";
-import Button from "../../Button/Button";
+import AddButton from "@/components/Button/AddButton/AddButton";
+import CancelButton from "@/components/Button/CancelButton/CancelButton";
 import { TodoContext } from "@/context/ToDoContext";
 
 export default function AddTaskModal() {
@@ -34,8 +35,11 @@ export default function AddTaskModal() {
           />
         </div>
         <div>
-          <Button onClick={() => setIsModalOpen(false)}>Cancelar</Button>
-          <Button onClick={handleSaveTask}>Adicionar</Button>
+          <CancelButton onClick={() => setIsModalOpen(false)} />
+
+          <AddButton addClass="smallButton" onClick={handleSaveTask}>
+            Adicionar
+          </AddButton>
         </div>
       </div>
     )

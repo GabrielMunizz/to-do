@@ -3,8 +3,8 @@
 import { useEffect, useContext } from "react";
 import Task from "./Task/Task";
 import { TodoContext } from "@/context/ToDoContext";
-import Button from "../Button/Button";
 import "./Tasks.scss";
+import AddButton from "../Button/AddButton/AddButton";
 
 export default function Tasks() {
   const { setTasks, setIsModalOpen, tasks } = useContext(TodoContext);
@@ -33,9 +33,9 @@ export default function Tasks() {
           )}
         </div>
       </div>
-      <Button onClick={() => setIsModalOpen(true)}>
+      <AddButton onClick={() => setIsModalOpen(true)}>
         Adicionar nova tarefa
-      </Button>
+      </AddButton>
     </section>
   );
 }

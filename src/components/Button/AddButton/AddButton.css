@@ -1,0 +1,20 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter_Tight", sans-serif;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.addButton {
+  width: 272px;
+  height: 51px;
+  background-color: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+  border-radius: 8px;
+  border: none;
+}
+
+.smallButton {
+  width: 185px;
+}/*# sourceMappingURL=AddButton.css.map */

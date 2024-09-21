@@ -42,4 +42,9 @@ section {
   font-weight: 400;
   font-size: 16px;
   color: rgba(0, 0, 0, 0.5411764706);
+}
+
+.addButton {
+  background-color: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+  border: none;
 }/*# sourceMappingURL=Tasks.css.map */
