@@ -7,8 +7,8 @@ html {
   height: 100%;
 }
 
-.addTaskModal {
-  width: 100%;
+.taskModal {
+  width: auto;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -44,9 +44,10 @@ html {
   line-height: 19.36px;
   letter-spacing: -2%;
   font-weight: 400;
+  height: 19px;
   margin: 8px 0 24px 0;
 }
 
 .modalTitleContainer {
-  width: 75%;
+  width: 100%;
 }/*# sourceMappingURL=AddTaskModal.css.map */

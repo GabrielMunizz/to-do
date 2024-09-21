@@ -2,7 +2,8 @@
 
 .addButton {
   @include button-styles;
-  background-color: $gradient-blue; 
+  background-image: $gradient-blue;
+  color: #fff;
 }
 
 .smallButton {

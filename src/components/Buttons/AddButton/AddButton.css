@@ -13,7 +13,14 @@ html {
   border-radius: 8px;
   border: none;
   margin-bottom: 25px;
-  background-color: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: -2%;
+  font-weight: 400;
+  height: 19px;
+  font-weight: 500;
+  background-image: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+  color: #fff;
 }
 
 .smallButton {

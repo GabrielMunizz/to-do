@@ -12,6 +12,7 @@ html {
   line-height: 19.36px;
   letter-spacing: -2%;
   font-weight: 400;
+  height: 19px;
 }
 
 @mixin button-styles {
@@ -20,10 +21,12 @@ html {
   border-radius: 8px;
   border: none;
   margin-bottom: 25px;
+  @include text-styles;
+  font-weight: 500;
 }
 
 @mixin modal-styles {
-  width: 100%;
+  width: auto;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -59,4 +62,6 @@ $breakpoint-2xl: 1920px;
 
 // Buttons
 $gradient-blue: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+$gradient-red:  linear-gradient(90deg, #D30707 0%, #F05353 68.65%);
+
 $cancel-button: #E7EEFB;

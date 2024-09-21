@@ -22,7 +22,7 @@ export default function AddTaskModal() {
 
   return (
     isModalOpen && (
-      <div className='addTaskModal'>
+      <div className='taskModal'>
         <div className='modalTitleContainer'>
           <h2>Nova tarefa</h2>
         </div>
@@ -37,11 +37,10 @@ export default function AddTaskModal() {
           />
         </div>
         <div className='buttonsContainer'>
-          <CancelButton onClick={() => setIsModalOpen(false)} />
-
           <AddButton onClick={handleSaveTask}>
             Adicionar
           </AddButton>
+          <CancelButton onClick={() => setIsModalOpen(false)} />
         </div>
       </div>
     )

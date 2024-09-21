@@ -13,8 +13,7 @@ header {
   justify-content: space-between;
   width: 272px;
   height: 90px;
-  margin: 24px;
-  
+  margin: 24px;  
 
   @media (min-width: $breakpoint-md) {
     flex-direction: row;

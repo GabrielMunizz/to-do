@@ -1,0 +1,29 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter_Tight", sans-serif;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.deleteTaskModal {
+  width: 272px;
+}
+
+.insideContainer {
+  border: 1px solid blue;
+}
+
+.subtitleContainer {
+  width: 272px;
+  height: 48px;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: -2%;
+  font-weight: 400;
+  height: 19px;
+  height: auto;
+  margin-bottom: 24px;
+  color: rgba(0, 0, 0, 0.5411764706);
+}/*# sourceMappingURL=DeleteTaskModal.css.map */

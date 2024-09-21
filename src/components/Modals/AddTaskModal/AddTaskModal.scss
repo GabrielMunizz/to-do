@@ -1,6 +1,6 @@
 @import '../../../app/globals.scss';
 
-.addTaskModal {
+.taskModal {
   @include modal-styles;  
   position: absolute;
   padding: 24px;
@@ -26,6 +26,6 @@
   margin: 8px 0 24px 0; 
 }
 
-.modalTitleContainer {  
-  width: 75%;     
+.modalTitleContainer {
+  width: 100%;  
 }
