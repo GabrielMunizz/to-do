@@ -9,10 +9,11 @@ html {
 
 .addButton {
   width: 272px;
-  height: 51px;
+  min-height: 51px;
   background-color: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
   border-radius: 8px;
   border: none;
+  margin-bottom: 25px;
 }
 
 .smallButton {
