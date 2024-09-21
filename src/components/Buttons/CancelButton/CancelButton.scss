@@ -1,0 +1,6 @@
+@import "../../../app/globals.scss";
+
+.cancelButton {
+  @include button-styles;
+  background-color: $cancel-button;
+}

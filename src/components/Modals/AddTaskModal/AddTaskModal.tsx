@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import AddButton from "@/components/Buttons/AddButton/AddButton";
 import CancelButton from "@/components/Buttons/CancelButton/CancelButton";
 import { TodoContext } from "@/context/ToDoContext";
+import './AddTaskModal.scss';
 
 export default function AddTaskModal() {
   const [newTask, setNewTask] = useState("");
@@ -19,12 +20,13 @@ export default function AddTaskModal() {
     setNewTask("");
   };
 
-  console.log(newTask);
   return (
     isModalOpen && (
-      <div>
-        <h2>Nova tarefa</h2>
-        <div>
+      <div className='addTaskModal'>
+        <div className='modalTitleContainer'>
+          <h2>Nova tarefa</h2>
+        </div>
+        <div className='inputContainer'>
           <label htmlFor="newTask">Título</label>
           <input
             id="newTask"
@@ -34,10 +36,10 @@ export default function AddTaskModal() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className='buttonsContainer'>
           <CancelButton onClick={() => setIsModalOpen(false)} />
 
-          <AddButton addClass="smallButton" onClick={handleSaveTask}>
+          <AddButton onClick={handleSaveTask}>
             Adicionar
           </AddButton>
         </div>

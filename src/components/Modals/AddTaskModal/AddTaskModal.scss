@@ -1,0 +1,31 @@
+@import '../../../app/globals.scss';
+
+.addTaskModal {
+  @include modal-styles;  
+  position: absolute;
+  padding: 24px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#newTask {
+  @include input-styles;
+  margin: 8px 0 24px 0; 
+}
+
+.modalTitleContainer {  
+  width: 75%;     
+}

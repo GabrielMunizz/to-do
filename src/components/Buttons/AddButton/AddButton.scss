@@ -1,12 +1,8 @@
 @import "../../../app/globals.scss";
 
 .addButton {
-  width: 272px;
-  min-height: 51px;
-  background-color: $gradient-blue;
-  border-radius: 8px;
-  border: none;
-  margin-bottom: 25px;
+  @include button-styles;
+  background-color: $gradient-blue; 
 }
 
 .smallButton {

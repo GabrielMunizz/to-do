@@ -1,1 +1,17 @@
-/*# sourceMappingURL=CancelButton.css.map */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter_Tight", sans-serif;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.cancelButton {
+  width: 272px;
+  min-height: 51px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 25px;
+  background-color: #E7EEFB;
+}/*# sourceMappingURL=CancelButton.css.map */
