@@ -5,6 +5,7 @@ import trashBin from "../../../assets/trash.png";
 import { useContext, useState } from "react";
 import { TodoContext } from "@/context/ToDoContext";
 import { TaskType } from "@/utils/types";
+import "./Task.scss";
 
 type TaskProps = {
   id: number;
@@ -18,6 +19,7 @@ export default function Task({ children, id }: TaskProps) {
     localStorage.getItem("tasks") as string
   );
   const isTaskChecked = savedTasks[id - 1].checked;
+  console.log("ID", id, "CHECKED", isTaskChecked);
 
   const [isChecked, setIsChecked] = useState(isTaskChecked);
 
@@ -28,9 +30,9 @@ export default function Task({ children, id }: TaskProps) {
       task.id === id ? { ...task, checked: updatedCheck } : task
     );
 
-    setIsChecked(updatedCheck);
-
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+
+    setIsChecked(updatedCheck);
   };
 
   const handleWantToDelete = () => {
@@ -39,8 +41,9 @@ export default function Task({ children, id }: TaskProps) {
   };
 
   return (
-    <div>
+    <div className="taskContainer">
       <input
+        className="checkbox"
         type="checkbox"
         name="checkTask"
         id="checkTask"
@@ -49,7 +52,7 @@ export default function Task({ children, id }: TaskProps) {
       />
       <p>{children}</p>
       <button onClick={handleWantToDelete}>
-        <Image src={trashBin} alt="trash bin icon" />
+        <Image className="buttonImage" src={trashBin} alt="trash bin icon" />
       </button>
     </div>
   );

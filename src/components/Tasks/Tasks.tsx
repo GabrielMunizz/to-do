@@ -1,40 +1,36 @@
 "use client";
 
 import { useEffect, useContext } from "react";
-import Task from "./Task/Task";
 import { TodoContext } from "@/context/ToDoContext";
-import Button from "../Button/Button";
+import "./Tasks.scss";
+import AddButton from "../Buttons/AddButton/AddButton";
+import { TaskType } from "@/utils/types";
+import CompletedTasks from "./CompletedTasks/CompletedTasks";
+import OpenTasks from "./OpenTasks/OpenTasks";
 
 export default function Tasks() {
-  const { setTasks, setIsModalOpen, tasks } = useContext(TodoContext);
+  const { setTasks, setCompletedTasks, setIsModalOpen, tasks } =
+    useContext(TodoContext);
 
   useEffect(() => {
     const savedTasks = localStorage.getItem("tasks");
     if (savedTasks) {
-      setTasks(JSON.parse(savedTasks));
+      const allTasks: TaskType[] = JSON.parse(savedTasks);
+      const openTasks = allTasks.filter((task) => !task.checked);
+      const completedTasks = allTasks.filter((task) => task.checked);
+      setCompletedTasks(completedTasks);
+      setTasks(openTasks);
     }
-  }, []);
+  }, [tasks]);
   return (
     <section>
-      <div>
-        <div>
-          <p>Suas tarefas de hoje</p>
-        </div>
-        <div>
-          {tasks.length !== 0 ? (
-            tasks.map(({ toDo, id }) => (
-              <Task key={id} id={id}>
-                {toDo}
-              </Task>
-            ))
-          ) : (
-            <p>Nenhuma tarefa adicionada</p>
-          )}
-        </div>
+      <div className="mainContent">
+        <OpenTasks />
+        <CompletedTasks />
       </div>
-      <Button onClick={() => setIsModalOpen(true)}>
+      <AddButton onClick={() => setIsModalOpen(true)}>
         Adicionar nova tarefa
-      </Button>
+      </AddButton>
     </section>
   );
 }

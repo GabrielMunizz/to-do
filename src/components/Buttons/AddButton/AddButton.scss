@@ -1,0 +1,11 @@
+@import "../../../app/globals.scss";
+
+.addButton {
+  @include button-styles;
+  background-image: $gradient-blue;
+  color: #fff;
+}
+
+.smallButton {
+  width: 185px;
+}

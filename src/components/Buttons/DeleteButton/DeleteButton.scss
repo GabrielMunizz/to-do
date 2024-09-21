@@ -1,0 +1,7 @@
+@import '../../../app/globals.scss';
+
+.deleteButton {
+  @include button-styles;
+  background-image: $gradient-red;
+  color: #fff;
+}

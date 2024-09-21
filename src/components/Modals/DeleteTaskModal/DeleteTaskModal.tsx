@@ -1,24 +1,29 @@
-"use client";
+'use client';
 
-import Button from "@/components/Button/Button";
-import { TodoContext } from "@/context/ToDoContext";
-import { useContext } from "react";
+import CancelButton from '@/components/Buttons/CancelButton/CancelButton';
+import DeleteButton from '@/components/Buttons/DeleteButton/DeleteButton';
+import { TodoContext } from '@/context/ToDoContext';
+import { useContext } from 'react';
+import './DeleteTaskModal.scss';
 
 export default function DeleteTaskModal() {
-  const { setWantToDelete, wantToDelete, setTaskId, deleteTask, taskId } =
-    useContext(TodoContext);
+  const { setWantToDelete, wantToDelete, setTaskId } = useContext(TodoContext);
   const handleCancel = () => {
     setTaskId(null);
     setWantToDelete(false);
   };
   return (
     wantToDelete && (
-      <div>
-        <h2>Deletar tarefa</h2>
-        <p>Tem certeza que você deseja deletar essa tarefa?</p>
-        <div>
-          <Button onClick={handleCancel}>Cancelar</Button>
-          <Button onClick={() => deleteTask(taskId)}>Deletar</Button>
+      <div className="taskModal deleteTaskModal">
+        <div className="modalTitleContainer">
+          <h2>Deletar tarefa</h2>
+        </div>
+        <div className="subtitleContainer">
+          <p>Tem certeza que você deseja deletar essa tarefa?</p>
+        </div>
+        <div className="buttonsContainer">
+          <DeleteButton />
+          <CancelButton onClick={handleCancel} />
         </div>
       </div>
     )
