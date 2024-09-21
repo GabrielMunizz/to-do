@@ -1,7 +1,7 @@
 "use client";
 
-import CancelButton from "@/components/Button/CancelButton/CancelButton";
-import DeleteButton from "@/components/Button/DeleteButton/DeleteButton";
+import CancelButton from "@/components/Buttons/CancelButton/CancelButton";
+import DeleteButton from "@/components/Buttons/DeleteButton/DeleteButton";
 import { TodoContext } from "@/context/ToDoContext";
 import { useContext } from "react";
 

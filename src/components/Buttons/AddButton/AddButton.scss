@@ -2,10 +2,11 @@
 
 .addButton {
   width: 272px;
-  height: 51px;
+  min-height: 51px;
   background-color: $gradient-blue;
   border-radius: 8px;
   border: none;
+  margin-bottom: 25px;
 }
 
 .smallButton {

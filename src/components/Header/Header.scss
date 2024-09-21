@@ -1,13 +1,18 @@
 @import "../../app/globals.scss";
 
 header {
-  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  width: 272px;
+  height: 174px;
 
   @media (min-width: $breakpoint-md) {
     flex-direction: row;
@@ -37,7 +42,6 @@ header {
 .date {
   color: $black-half-opacity;
   font-weight: 400;
-  margin-bottom: 20px;
 
   @media (min-width: $breakpoint-md) {
     margin-bottom: 8px;
@@ -47,5 +51,7 @@ header {
 hr {
   border: none;
   border-top: 1px solid $hr-color;
-  width: 100%;
+  width: 272px;
+  margin-top: 0;
+  margin-bottom: 24px;
 }

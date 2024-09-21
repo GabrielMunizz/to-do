@@ -5,15 +5,20 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 70%;
+  width: 208px;
+  height: 56px;
   border: 2px dashed $hr-color;
   border-radius: 8px;
-  padding: 16px;
+  padding: 8px;
+  margin-bottom: 8px;
 }
 
 .taskContainer p {
   @include text-styles;
   margin: 0 16px;
+  text-align: start;
+  min-width: 112px;
+  height: 19px;
 }
 
 .taskContainer button,

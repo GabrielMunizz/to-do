@@ -1,8 +1,8 @@
 "use client";
 
 import { useContext, useState } from "react";
-import AddButton from "@/components/Button/AddButton/AddButton";
-import CancelButton from "@/components/Button/CancelButton/CancelButton";
+import AddButton from "@/components/Buttons/AddButton/AddButton";
+import CancelButton from "@/components/Buttons/CancelButton/CancelButton";
 import { TodoContext } from "@/context/ToDoContext";
 
 export default function AddTaskModal() {
