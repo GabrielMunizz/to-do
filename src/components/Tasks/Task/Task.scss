@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   width: $taskContainer-width;
-  height: 24px;
+  min-height: 24px;
   border: $dashed-border;
   border-radius: 8px;
   padding: $taskContainer-padding;
@@ -31,8 +31,9 @@
   @include text-styles;
   margin: 0 16px;
   text-align: start;
+  align-items: center;
   min-width: 112px;
-  height: 19px;
+  min-height: 19px;  
 }
 
 .taskContainer button,
