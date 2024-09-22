@@ -40,7 +40,10 @@ header {
 
 .welcome {
   @media (min-width: $breakpoint-md) {
+<<<<<<< HEAD
     margin: 0;
+=======
+>>>>>>> 297a2727cc8aa7fa779138fd69ed2467b35df744
     font-size: 24px;
   }
 }
@@ -51,7 +54,11 @@ header {
   font-weight: 400;
 
   @media (min-width: $breakpoint-md) {
+<<<<<<< HEAD
     margin: 0;    
+=======
+    margin-bottom: 8px;
+>>>>>>> 297a2727cc8aa7fa779138fd69ed2467b35df744
   }
 }
 
@@ -61,8 +68,11 @@ hr {
   width: 272px;
   margin-top: 0;
   margin-bottom: 24px;
+<<<<<<< HEAD
 
   @media (min-width: $breakpoint-md) {    
     width: calc(100% - 112px);    
   }
+=======
+>>>>>>> 297a2727cc8aa7fa779138fd69ed2467b35df744
 }
