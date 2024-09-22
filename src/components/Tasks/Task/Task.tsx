@@ -18,8 +18,7 @@ export default function Task({ children, id }: TaskProps) {
   const savedTasks: TaskType[] = JSON.parse(
     localStorage.getItem("tasks") as string
   );
-  const isTaskChecked = savedTasks[id - 1].checked;
-  console.log("ID", id, "CHECKED", isTaskChecked);
+  const isTaskChecked = savedTasks[id - 1]?.checked;  
 
   const [isChecked, setIsChecked] = useState(isTaskChecked);
 

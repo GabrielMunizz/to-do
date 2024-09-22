@@ -58,6 +58,16 @@ html {
   margin: 8px 32px 32px 32px;
 }
 
+// Tasks component width
+$mainContent-width: 272px;
+$mainContent-width-lg: 450px;
+
+// Task component width
+$taskContainer-width: 192px;
+$taskContainer-width-lg: 354px;
+$taskContainer-padding: 16px 8px;
+$taskContainer-padding-lg: 16px;
+
 // Text colors
 $black-half-opacity: #0000008a;
 $pure-black: #000;
@@ -67,6 +77,9 @@ $light-blue: #a0dcf6;
 // Border colors
 $border-color: #eaecf0;
 $hr-color: #d7dde9;
+
+// Task hover color
+$task-hover-color: #F7F9FD;
 
 // Responsive breakpoints
 $breakpoint-md: 768px;

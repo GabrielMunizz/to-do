@@ -2,7 +2,7 @@
 
 section {
   width: 100%;
-  height: calc(100% - 186px);
+  min-height: calc(100% - 186px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,11 +13,15 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 272px;
-  height: 428px;
+  width: $mainContent-width;
+  min-height: 428px;
   border: 1px solid $border-color;
   border-radius: 15px;
   margin-bottom: 24px;
+
+  @media (min-width: $breakpoint-md) {
+    width: $mainContent-width-lg;  
+  }
 }
 
 .tasksContainer {
@@ -28,6 +32,10 @@ section {
   width: 100%;
   height: 100%;
   margin: 24px 0;
+
+  @media (min-width: $breakpoint-md) {
+    margin: 8px 0;    
+  }
 }
 
 .subText {
