@@ -10,16 +10,16 @@ import "./Task.scss";
 type TaskProps = {
   id: number;
   children: string;
+  completedTask?: string;
 };
 
-export default function Task({ children, id }: TaskProps) {
+export default function Task({ children, id, completedTask }: TaskProps) {
   const { setWantToDelete, setTaskId } = useContext(TodoContext);
 
   const savedTasks: TaskType[] = JSON.parse(
     localStorage.getItem("tasks") as string
   );
-  const isTaskChecked = savedTasks[id - 1].checked;
-  console.log("ID", id, "CHECKED", isTaskChecked);
+  const isTaskChecked = savedTasks[id - 1]?.checked;  
 
   const [isChecked, setIsChecked] = useState(isTaskChecked);
 
@@ -50,7 +50,7 @@ export default function Task({ children, id }: TaskProps) {
         checked={isChecked}
         onChange={handleCheck}
       />
-      <p>{children}</p>
+      <p className={completedTask}>{children}</p>
       <button onClick={handleWantToDelete}>
         <Image className="buttonImage" src={trashBin} alt="trash bin icon" />
       </button>

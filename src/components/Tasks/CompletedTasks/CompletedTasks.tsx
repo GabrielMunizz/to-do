@@ -14,7 +14,7 @@ export default function CompletedTasks() {
         </div>
         <div className="tasksContainer">
           {completedTasks.map(({ toDo, id }) => (
-            <Task key={id} id={id}>
+            <Task completedTask='completedTask' key={id} id={id}>
               {toDo}
             </Task>
           ))}

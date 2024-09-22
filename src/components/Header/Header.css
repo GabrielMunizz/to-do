@@ -7,6 +7,10 @@ html {
   height: 100%;
 }
 
+.modal-open {
+  overflow: hidden;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -22,11 +26,14 @@ header {
   height: 90px;
   margin: 24px;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .container {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: calc(100% - 112px);
+    height: 60px;
+    margin: 24px 0;
   }
 }
 
@@ -47,8 +54,14 @@ header {
   margin-top: 8px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .welcome {
+    margin: 0;
+  }
+}
+@media (min-width: 1023px) {
+  .welcome {
+    line-height: 29.04px;
     font-size: 24px;
   }
 }
@@ -58,9 +71,9 @@ header {
   color: rgba(0, 0, 0, 0.5411764706);
   font-weight: 400;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .date {
-    margin-bottom: 8px;
+    margin: 0;
   }
 }
 
@@ -70,4 +83,9 @@ hr {
   width: 272px;
   margin-top: 0;
   margin-bottom: 24px;
+}
+@media (min-width: 767px) {
+  hr {
+    width: calc(100% - 112px);
+  }
 }/*# sourceMappingURL=Header.css.map */

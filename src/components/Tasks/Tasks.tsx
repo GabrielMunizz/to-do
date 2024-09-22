@@ -28,7 +28,7 @@ export default function Tasks() {
         <OpenTasks />
         <CompletedTasks />
       </div>
-      <AddButton onClick={() => setIsModalOpen(true)}>
+      <AddButton addClass='addButton' onClick={() => setIsModalOpen(true)}>
         Adicionar nova tarefa
       </AddButton>
     </section>

@@ -7,6 +7,10 @@ html {
   height: 100%;
 }
 
+.modal-open {
+  overflow: hidden;
+}
+
 .taskModal {
   width: auto;
   height: 100%;
@@ -15,23 +19,72 @@ html {
   justify-content: flex-start;
   align-items: center;
   background-color: #fff;
-  position: absolute;
+  position: fixed;
   padding: 24px;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
+  z-index: 200;
+}
+@media (min-width: 767px) {
+  .taskModal {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 386px;
+    height: 222px;
+    border-radius: 16px;
+    box-shadow: 0px 24px 48px -12px rgba(16, 24, 40, 0.1803921569);
+    padding: 32px;
+  }
+}
+
+.blurry {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  z-index: 100;
 }
 
 .buttonsContainer {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 767px) {
+  .buttonsContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .buttonsContainer .firstButton {
+    order: 2;
+    margin-bottom: 0;
+  }
+  .buttonsContainer .secondButton {
+    order: 1;
+    margin-bottom: 0;
+  }
+}
 
 .inputContainer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+@media (min-width: 767px) {
+  .inputContainer {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+}
+
+.inputContainer label {
+  height: 19px;
 }
 
 #newTask {
@@ -45,9 +98,27 @@ html {
   letter-spacing: -2%;
   font-weight: 400;
   height: 19px;
-  margin: 8px 0 24px 0;
+  margin-top: 8px;
+}
+@media (min-width: 767px) {
+  #newTask {
+    width: 354px;
+    margin-top: 8px;
+  }
 }
 
 .modalTitleContainer {
   width: 100%;
+  margin: 0 0 32px 0;
+}
+
+.modalTitleContainer h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.modalTitleContainer h4 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
 }/*# sourceMappingURL=AddTaskModal.css.map */

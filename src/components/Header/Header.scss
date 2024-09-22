@@ -19,6 +19,9 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: calc(100% - 112px);
+    height: 60px;
+    margin: 24px 0;   
   }
 }
 
@@ -37,6 +40,10 @@ header {
 
 .welcome {
   @media (min-width: $breakpoint-md) {
+    margin: 0;    
+  }
+  @media (min-width: $breakpoint-lg) {  
+    line-height: 29.04px;  
     font-size: 24px;
   }
 }
@@ -47,7 +54,7 @@ header {
   font-weight: 400;
 
   @media (min-width: $breakpoint-md) {
-    margin-bottom: 8px;
+    margin: 0;    
   }
 }
 
@@ -57,4 +64,8 @@ hr {
   width: 272px;
   margin-top: 0;
   margin-bottom: 24px;
+
+  @media (min-width: $breakpoint-md) {    
+    width: calc(100% - 112px);    
+  }
 }

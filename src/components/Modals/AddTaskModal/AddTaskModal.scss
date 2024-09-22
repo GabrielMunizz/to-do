@@ -2,30 +2,76 @@
 
 .taskModal {
   @include modal-styles;  
-  position: absolute;
-  padding: 24px;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
+
+  @media (min-width: $breakpoint-md) {
+    top: 50%;
+    transform:translate(-50%, -50%);
+    @include modal-styles-lg;
+    padding: 32px;    
+  }
+}
+
+.blurry {
+  @include overlay-styles;
 }
 
 .buttonsContainer {
   display: flex;
   flex-direction: column;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    
+    .firstButton {
+      order: 2;
+      margin-bottom: 0;
+    }
+
+    .secondButton {
+      order: 1;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .inputContainer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  @media (min-width: $breakpoint-md) {
+    width: 100%;
+    margin-bottom: 32px;  
+  }
+}
+
+.inputContainer label {
+  height: 19px;
 }
 
 #newTask {
   @include input-styles;
-  margin: 8px 0 24px 0; 
+  margin-top: 8px;
+
+  @media (min-width: $breakpoint-md) {
+    @include input-styles-lg;
+  }
 }
 
 .modalTitleContainer {
-  width: 100%;  
+  width: 100%;
+  margin: 0 0 32px 0;
+}
+
+.modalTitleContainer h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.modalTitleContainer h4 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
 }

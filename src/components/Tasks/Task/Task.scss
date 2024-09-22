@@ -5,12 +5,26 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 208px;
-  height: 56px;
-  border: 2px dashed $hr-color;
+  width: $taskContainer-width;
+  height: 24px;
+  border: 1px dashed $hr-color;
   border-radius: 8px;
-  padding: 8px;
+  padding: $taskContainer-padding;
   margin-bottom: 8px;
+
+  @media (min-width: $breakpoint-md) {
+    width: $taskContainer-width-lg;
+    padding: $taskContainer-padding-lg;
+    margin-bottom: 24px;    
+
+    &:hover {
+      width: $taskContainer-width-lg + 2px;      
+      height: 26px;
+      cursor: pointer;
+      background-color: $task-hover-color;
+      border: none;
+    }
+  }
 }
 
 .taskContainer p {
@@ -34,9 +48,14 @@
   background-color: transparent;
 }
 
+.completedTask {
+  text-decoration: line-through;
+  color: $black-half-opacity;  
+}
+
 .checkbox {
-  width: 24px;
-  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
   appearance: none;
   border: 1px solid $hr-color;
   border-radius: 4px;

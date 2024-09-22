@@ -7,9 +7,13 @@ html {
   height: 100%;
 }
 
+.modal-open {
+  overflow: hidden;
+}
+
 section {
   width: 100%;
-  height: calc(100% - 186px);
+  min-height: calc(100% - 186px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,10 +25,15 @@ section {
   flex-direction: column;
   align-items: center;
   width: 272px;
-  height: 428px;
+  min-height: 428px;
   border: 1px solid #eaecf0;
   border-radius: 15px;
   margin-bottom: 24px;
+}
+@media (min-width: 767px) {
+  .mainContent {
+    width: 450px;
+  }
 }
 
 .tasksContainer {
@@ -35,6 +44,11 @@ section {
   width: 100%;
   height: 100%;
   margin: 24px 0;
+}
+@media (min-width: 767px) {
+  .tasksContainer {
+    margin: 8px 0;
+  }
 }
 
 .subText {
