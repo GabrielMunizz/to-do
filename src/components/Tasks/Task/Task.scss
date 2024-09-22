@@ -7,7 +7,7 @@
   align-items: center;
   width: $taskContainer-width;
   height: 24px;
-  border: 1px dashed $hr-color;
+  border: $dashed-border;
   border-radius: 8px;
   padding: $taskContainer-padding;
   margin-bottom: 8px;

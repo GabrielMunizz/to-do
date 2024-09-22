@@ -92,7 +92,7 @@ $mainContent-width: 272px;
 $mainContent-width-lg: 450px;
 
 // Task component width
-$taskContainer-width: 192px;
+$taskContainer-width: 208px;
 $taskContainer-width-lg: 354px;
 $taskContainer-padding: 16px 8px;
 $taskContainer-padding-lg: 16px;
@@ -106,6 +106,7 @@ $light-blue: #a0dcf6;
 // Border colors
 $border-color: #eaecf0;
 $hr-color: #d7dde9;
+$dashed-border: 1px dashed $hr-color;
 
 // Task hover color
 $task-hover-color: #F7F9FD;
