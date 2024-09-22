@@ -16,6 +16,7 @@ type ToDoContextType = {
   completedTasks: TaskType[];
   setCompletedTasks: Dispatch<SetStateAction<TaskType[]>>;
   deleteTask: (taskId: number | null) => void;
+  loadTasks: () => TaskType[];
 };
 
 export const TodoContext = createContext({} as ToDoContextType);
@@ -31,23 +32,37 @@ export const TodoProvider = ({ children }: TodoProviderType) => {
   const [tasks, setTasks] = useState<TaskType[]>([]);
   const [completedTasks, setCompletedTasks] = useState<TaskType[]>([]);
 
-  const saveTask = (newTask: string) => {
-    const id = tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1;
-    const addNewTask = [...tasks, { id, toDo: newTask, checked: false }];
+  const loadTasks = () => {
+    const savedTasks = localStorage.getItem('tasks');
+    if (savedTasks) {
+      const loadTasks: TaskType[] = JSON.parse(savedTasks);
+      return loadTasks;
+    }
+    return [];
+  }
 
+  const saveTask = (newTask: string) => {
+    const savedTasks = loadTasks();  
+    const id = savedTasks.length === 0 ? 1 : savedTasks[savedTasks.length - 1].id + 1;
+    const addNewTask = [...savedTasks, { id, toDo: newTask, checked: false }];   
+    
     localStorage.setItem("tasks", JSON.stringify(addNewTask));
-    setTasks(addNewTask);
+    const reloadTasks = loadTasks();
+    const openTasks = reloadTasks.filter((task) => !task.checked);
+    setTasks(openTasks);
     setIsModalOpen(false);
-  };
+  };  
 
   const deleteTask = (taskId: number | null) => {
     const isTaskSaved = localStorage.getItem("tasks");
     if (isTaskSaved) {
       const loadedTasks: TaskType[] = JSON.parse(isTaskSaved);
       const filteredTasks = loadedTasks.filter((task) => task.id !== taskId);
+      const remainCompletedTasks = filteredTasks.filter((task) => task?.checked)
 
       localStorage.setItem("tasks", JSON.stringify(filteredTasks));
       setTasks(filteredTasks);
+      setCompletedTasks(remainCompletedTasks);
       setTaskId(null);
       setWantToDelete(false);
     }
@@ -67,6 +82,7 @@ export const TodoProvider = ({ children }: TodoProviderType) => {
         completedTasks,
         setCompletedTasks,
         deleteTask,
+        loadTasks,
       }}
     >
       {children}

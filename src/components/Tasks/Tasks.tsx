@@ -9,19 +9,19 @@ import CompletedTasks from "./CompletedTasks/CompletedTasks";
 import OpenTasks from "./OpenTasks/OpenTasks";
 
 export default function Tasks() {
-  const { setTasks, setCompletedTasks, setIsModalOpen, tasks } =
-    useContext(TodoContext);
+  const { setTasks, setCompletedTasks, setIsModalOpen } =
+    useContext(TodoContext);    
 
   useEffect(() => {
     const savedTasks = localStorage.getItem("tasks");
     if (savedTasks) {
       const allTasks: TaskType[] = JSON.parse(savedTasks);
       const openTasks = allTasks.filter((task) => !task.checked);
-      const completedTasks = allTasks.filter((task) => task.checked);
-      setCompletedTasks(completedTasks);
+      const checkedTasks = allTasks.filter((task) => task.checked);
+      setCompletedTasks(checkedTasks);
       setTasks(openTasks);
     }
-  }, [tasks]);
+  }, []);
   return (
     <section>
       <div className="mainContent">
