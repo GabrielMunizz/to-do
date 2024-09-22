@@ -37,10 +37,14 @@ export default function AddTaskModal() {
           />
         </div>
         <div className='buttonsContainer'>
-          <AddButton onClick={handleSaveTask}>
+          <AddButton addClass='confirmAdd' onClick={handleSaveTask}>
             Adicionar
           </AddButton>
+
           <CancelButton onClick={() => setIsModalOpen(false)} />
+          <AddButton addClass='smallButton' onClick={handleSaveTask}>
+            Adicionar
+          </AddButton>
         </div>
       </div>
     )

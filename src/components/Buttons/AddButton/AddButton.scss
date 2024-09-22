@@ -4,8 +4,27 @@
   @include button-styles;
   background-image: $gradient-blue;
   color: #fff;
+
+  @media (min-width: $breakpoint-md) {
+    @include button-styles-lg
+  }
+}
+
+.confirmAdd {
+  @extend .addButton;
+
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
 }
 
 .smallButton {
-  width: 185px;
+  @include button-styles;
+  background-image: $gradient-blue;
+  color: #fff;
+  width: 185px;  
+
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
 }

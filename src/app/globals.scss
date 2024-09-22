@@ -40,8 +40,9 @@ html {
 }
 
 @mixin modal-styles-lg {
-  width: 450px;
-  height: 286px;  
+  width: 386px;
+  height: 222px;
+  box-shadow: 0px 24px 48px -12px #1018282E;
 }
 
 @mixin input-styles {
@@ -54,8 +55,8 @@ html {
 }
 
 @mixin input-styles-lg {
-  width: 386px;
-  margin: 8px 32px 32px 32px;
+  width: 354px;
+  margin-top: 8px;
 }
 
 // Tasks component width

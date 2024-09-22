@@ -8,22 +8,43 @@
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
+
+  @media (min-width: $breakpoint-md) {
+    top: 50%;
+    transform:translate(-50%, -50%);
+    @include modal-styles-lg;
+    padding: 32px; 
+  }
 }
 
 .buttonsContainer {
   display: flex;
   flex-direction: column;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 .inputContainer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  @media (min-width: $breakpoint-md) {
+    width: 100%;    
+  }
 }
 
 #newTask {
   @include input-styles;
-  margin: 8px 0 24px 0; 
+  margin: 8px 0 24px 0;
+
+  @media (min-width: $breakpoint-md) {
+    @include input-styles-lg;
+  }
 }
 
 .modalTitleContainer {
