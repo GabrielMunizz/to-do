@@ -5,6 +5,11 @@ html {
   font-family: "Inter_Tight", sans-serif;
   box-sizing: border-box;
   height: 100%;
+  // overflow: hidden;
+}
+
+.modal-open {
+  overflow: hidden;
 }
 
 @mixin text-styles {
@@ -25,6 +30,10 @@ html {
   font-weight: 500;
 }
 
+@mixin button-styles-sm {
+  width: 185px;
+}
+
 @mixin button-styles-lg {
   width: 450px; 
 }
@@ -37,12 +46,20 @@ html {
   justify-content: flex-start;
   align-items: center;
   background-color: #fff;
+  position: fixed;
+  padding: 24px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  z-index: 200;  
 }
 
 @mixin modal-styles-lg {
   width: 386px;
   height: 222px;
-  box-shadow: 0px 24px 48px -12px #1018282E;
+  border-radius: 16px;
+  box-shadow: 0px 24px 48px -12px #1018282E;  
 }
 
 @mixin input-styles {
@@ -58,6 +75,17 @@ html {
   width: 354px;
   margin-top: 8px;
 }
+
+@mixin overlay-styles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7); 
+  backdrop-filter: blur(2px);
+  z-index: 100;
+} 
 
 // Tasks component width
 $mainContent-width: 272px;
@@ -83,10 +111,10 @@ $hr-color: #d7dde9;
 $task-hover-color: #F7F9FD;
 
 // Responsive breakpoints
-$breakpoint-md: 768px;
-$breakpoint-lg: 1024px;
+$breakpoint-md: 767px;
+$breakpoint-lg: 1023px;
 $breakpoint-xl: 1439px;
-$breakpoint-2xl: 1920px;
+$breakpoint-2xl: 1919px;
 
 // Buttons
 $gradient-blue: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);

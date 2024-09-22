@@ -7,6 +7,10 @@ html {
   height: 100%;
 }
 
+.modal-open {
+  overflow: hidden;
+}
+
 .cancelButton {
   width: 272px;
   min-height: 51px;
@@ -20,4 +24,9 @@ html {
   height: 19px;
   font-weight: 500;
   background-color: #E7EEFB;
+}
+@media (min-width: 767px) {
+  .cancelButton {
+    width: 185px;
+  }
 }/*# sourceMappingURL=CancelButton.css.map */

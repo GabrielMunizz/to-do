@@ -48,6 +48,11 @@
   background-color: transparent;
 }
 
+.completedTask {
+  text-decoration: line-through;
+  color: $black-half-opacity;  
+}
+
 .checkbox {
   min-width: 24px;
   min-height: 24px;

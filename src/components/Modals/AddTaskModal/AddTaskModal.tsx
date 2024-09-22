@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AddButton from "@/components/Buttons/AddButton/AddButton";
 import CancelButton from "@/components/Buttons/CancelButton/CancelButton";
 import { TodoContext } from "@/context/ToDoContext";
@@ -20,33 +20,45 @@ export default function AddTaskModal() {
     setNewTask("");
   };
 
+  useEffect(() => {
+    if (isModalOpen) {
+      window.scrollTo(0, 0);
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+  }, [isModalOpen])
+
   return (
     isModalOpen && (
-      <div className='taskModal'>
-        <div className='modalTitleContainer'>
-          <h2>Nova tarefa</h2>
-        </div>
-        <div className='inputContainer'>
-          <label htmlFor="newTask">Título</label>
-          <input
-            id="newTask"
-            type="text"
-            value={newTask}
-            placeholder="Digite"
-            onChange={handleChange}
-          />
-        </div>
-        <div className='buttonsContainer'>
-          <AddButton addClass='confirmAdd' onClick={handleSaveTask}>
-            Adicionar
-          </AddButton>
+      <>
+        <div className='blurry'/>
+        <div className='taskModal'>
+          <div className='modalTitleContainer'>
+            <h4>Nova tarefa</h4>
+          </div>
+          <div className='inputContainer'>
+            <label htmlFor="newTask">Título</label>
+            <input
+              id="newTask"
+              type="text"
+              value={newTask}
+              placeholder="Digite"
+              onChange={handleChange}
+            />
+          </div>
+          <div className='buttonsContainer'>
+            <AddButton addClass='confirmAdd' onClick={handleSaveTask}>
+              Adicionar
+            </AddButton>
 
-          <CancelButton onClick={() => setIsModalOpen(false)} />
-          <AddButton addClass='smallButton' onClick={handleSaveTask}>
-            Adicionar
-          </AddButton>
+            <CancelButton onClick={() => setIsModalOpen(false)} />
+            <AddButton addClass='smallButton firstButton' onClick={handleSaveTask}>
+              Adicionar
+            </AddButton>
+          </div>
         </div>
-      </div>
+      </>
     )
   );
 }

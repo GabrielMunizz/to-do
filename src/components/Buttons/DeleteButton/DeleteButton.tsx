@@ -7,7 +7,7 @@ import { TodoContext } from "@/context/ToDoContext";
 export default function DeleteButton() {
   const { deleteTask, taskId } = useContext(TodoContext);
   return (
-    <button onClick={() => deleteTask(taskId)} className="deleteButton">
+    <button onClick={() => deleteTask(taskId)} className="deleteButton firstButton">
       Deletar
     </button>
   );

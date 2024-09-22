@@ -5,6 +5,6 @@
   background-color: $cancel-button;
 
   @media (min-width: $breakpoint-md) {
-    width: 185px;
+    @include button-styles-sm;
   }
 }

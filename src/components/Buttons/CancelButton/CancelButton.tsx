@@ -6,7 +6,7 @@ type CancelButtonProps = {
 
 export default function CancelButton({ onClick }: CancelButtonProps) {
   return (
-    <button className='cancelButton' onClick={onClick}>
+    <button className='cancelButton secondButton' onClick={onClick}>
       Cancelar
     </button>
   );

@@ -7,12 +7,8 @@ html {
   height: 100%;
 }
 
-.deleteTaskModal {
-  width: 272px;
-}
-
-.insideContainer {
-  border: 1px solid blue;
+.modal-open {
+  overflow: hidden;
 }
 
 .subtitleContainer {
@@ -26,4 +22,15 @@ html {
   height: auto;
   margin-bottom: 24px;
   color: rgba(0, 0, 0, 0.5411764706);
+}
+@media (min-width: 767px) {
+  .subtitleContainer {
+    width: 100%;
+    height: 24px;
+    margin-bottom: 32px;
+  }
+}
+
+.subtitleContainer p {
+  margin: 0;
 }/*# sourceMappingURL=DeleteTaskModal.css.map */

@@ -4,4 +4,9 @@
   @include button-styles;
   background-image: $gradient-red;
   color: #fff;
+
+  @media (min-width: $breakpoint-md) {
+    @include button-styles-sm;
+    font-weight: 500;
+  }
 }

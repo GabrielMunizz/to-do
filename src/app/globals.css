@@ -5,4 +5,8 @@ html {
   font-family: "Inter_Tight", sans-serif;
   box-sizing: border-box;
   height: 100%;
+}
+
+.modal-open {
+  overflow: hidden;
 }/*# sourceMappingURL=globals.css.map */

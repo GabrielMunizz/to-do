@@ -22,9 +22,10 @@
   @include button-styles;
   background-image: $gradient-blue;
   color: #fff;
-  width: 185px;  
+  width: 185px;
+  margin-bottom: 0;  
 
   @media (max-width: $breakpoint-md) {
-    display: none;
+    display: none;    
   }
 }

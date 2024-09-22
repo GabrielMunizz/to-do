@@ -10,9 +10,10 @@ import "./Task.scss";
 type TaskProps = {
   id: number;
   children: string;
+  completedTask?: string;
 };
 
-export default function Task({ children, id }: TaskProps) {
+export default function Task({ children, id, completedTask }: TaskProps) {
   const { setWantToDelete, setTaskId } = useContext(TodoContext);
 
   const savedTasks: TaskType[] = JSON.parse(
@@ -49,7 +50,7 @@ export default function Task({ children, id }: TaskProps) {
         checked={isChecked}
         onChange={handleCheck}
       />
-      <p>{children}</p>
+      <p className={completedTask}>{children}</p>
       <button onClick={handleWantToDelete}>
         <Image className="buttonImage" src={trashBin} alt="trash bin icon" />
       </button>
