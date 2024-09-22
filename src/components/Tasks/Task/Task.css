@@ -16,8 +16,8 @@ html {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 192px;
-  height: 24px;
+  width: 208px;
+  min-height: 24px;
   border: 1px dashed #d7dde9;
   border-radius: 8px;
   padding: 16px 8px;
@@ -43,11 +43,11 @@ html {
   line-height: 19.36px;
   letter-spacing: -2%;
   font-weight: 400;
-  height: 19px;
   margin: 0 16px;
   text-align: start;
+  align-items: center;
   min-width: 112px;
-  height: 19px;
+  min-height: 19px;
 }
 
 .taskContainer button,
