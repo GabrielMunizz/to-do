@@ -4,7 +4,6 @@ import Image from "next/image";
 import trashBin from "../../../assets/trash.png";
 import { useContext, useState } from "react";
 import { TodoContext } from "@/context/ToDoContext";
-import { TaskType } from "@/utils/types";
 import "./Task.scss";
 
 type TaskProps = {
@@ -14,14 +13,13 @@ type TaskProps = {
 };
 
 export default function Task({ children, id, completedTask }: TaskProps) {
-  const { setWantToDelete, setTaskId } = useContext(TodoContext);
+  const { setWantToDelete, setTaskId, setCompletedTasks, loadTasks, setTasks } = useContext(TodoContext);
 
-  const savedTasks: TaskType[] = JSON.parse(
-    localStorage.getItem("tasks") as string
-  );
+  const savedTasks = loadTasks();
   const isTaskChecked = savedTasks[id - 1]?.checked;  
 
   const [isChecked, setIsChecked] = useState(isTaskChecked);
+  
 
   const handleCheck = () => {
     const updatedCheck = !isTaskChecked;
@@ -31,8 +29,14 @@ export default function Task({ children, id, completedTask }: TaskProps) {
     );
 
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    const loadedTasks = loadTasks();
+    const checkedTasks = loadedTasks.filter((task) => task?.checked);
+    const openTasks = loadedTasks.filter((task) => !task?.checked);
+
 
     setIsChecked(updatedCheck);
+    setCompletedTasks(checkedTasks);
+    setTasks(openTasks);
   };
 
   const handleWantToDelete = () => {
