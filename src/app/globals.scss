@@ -1,17 +1,81 @@
-body {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: "Inter_Tight", sans-serif;
   box-sizing: border-box;
+  height: 100%;
 }
 
-// Borders
-$border-color: #d7dde9;
+@mixin text-styles {
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: -2%;
+  font-weight: 400;
+  height: 19px;
+}
+
+@mixin button-styles {
+  width: 272px;
+  min-height: 51px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 25px;
+  @include text-styles;
+  font-weight: 500;
+}
+
+@mixin button-styles-lg {
+  width: 450px; 
+}
+
+@mixin modal-styles {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+}
+
+@mixin modal-styles-lg {
+  width: 450px;
+  height: 286px;  
+}
+
+@mixin input-styles {
+  width: 240px;
+  height: 19px;  
+  padding: 16px;
+  border: 1px solid $hr-color;
+  border-radius: 8px;
+  @include text-styles;
+}
+
+@mixin input-styles-lg {
+  width: 386px;
+  margin: 8px 32px 32px 32px;
+}
+
+// Text colors
+$black-half-opacity: #0000008a;
+$pure-black: #000;
+$sky-blue: #0796d3;
+$light-blue: #a0dcf6;
+
+// Border colors
+$border-color: #eaecf0;
+$hr-color: #d7dde9;
 
 // Responsive breakpoints
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
-$breakpoint-xl: 1280px;
+$breakpoint-xl: 1439px;
 $breakpoint-2xl: 1920px;
 
 // Buttons
+$gradient-blue: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+$gradient-red:  linear-gradient(90deg, #D30707 0%, #F05353 68.65%);
+
+$cancel-button: #E7EEFB;

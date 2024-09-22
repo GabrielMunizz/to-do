@@ -1,8 +1,10 @@
 "use client";
 
 import { useContext, useState } from "react";
-import Button from "../../Button/Button";
+import AddButton from "@/components/Buttons/AddButton/AddButton";
+import CancelButton from "@/components/Buttons/CancelButton/CancelButton";
 import { TodoContext } from "@/context/ToDoContext";
+import './AddTaskModal.scss';
 
 export default function AddTaskModal() {
   const [newTask, setNewTask] = useState("");
@@ -18,12 +20,13 @@ export default function AddTaskModal() {
     setNewTask("");
   };
 
-  console.log(newTask);
   return (
     isModalOpen && (
-      <div>
-        <h2>Nova tarefa</h2>
-        <div>
+      <div className='taskModal'>
+        <div className='modalTitleContainer'>
+          <h2>Nova tarefa</h2>
+        </div>
+        <div className='inputContainer'>
           <label htmlFor="newTask">Título</label>
           <input
             id="newTask"
@@ -33,9 +36,11 @@ export default function AddTaskModal() {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <Button onClick={() => setIsModalOpen(false)}>Cancelar</Button>
-          <Button onClick={handleSaveTask}>Adicionar</Button>
+        <div className='buttonsContainer'>
+          <AddButton onClick={handleSaveTask}>
+            Adicionar
+          </AddButton>
+          <CancelButton onClick={() => setIsModalOpen(false)} />
         </div>
       </div>
     )

@@ -1,0 +1,24 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter_Tight", sans-serif;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.deleteButton {
+  width: 272px;
+  min-height: 51px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: -2%;
+  font-weight: 400;
+  height: 19px;
+  font-weight: 500;
+  background-image: linear-gradient(90deg, #D30707 0%, #F05353 68.65%);
+  color: #fff;
+}/*# sourceMappingURL=DeleteButton.css.map */

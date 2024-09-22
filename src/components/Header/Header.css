@@ -1,18 +1,26 @@
-body {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: "Inter_Tight", sans-serif;
   box-sizing: border-box;
+  height: 100%;
 }
 
 header {
-  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
+  width: 272px;
+  height: 90px;
+  margin: 24px;
 }
 @media (min-width: 768px) {
   .container {
@@ -29,21 +37,37 @@ header {
 
 .welcome,
 .date {
-  size: 16px;
+  font-size: 16px;
   line-height: 19.36px;
   letter-spacing: -2%;
+  font-weight: 400;
+  height: 19px;
   font-weight: 500;
-  margin: 8px;
+  margin: 0;
+  margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+  .welcome {
+    font-size: 24px;
+  }
 }
 
 .date {
+  height: 19px;
   color: rgba(0, 0, 0, 0.5411764706);
   font-weight: 400;
-  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .date {
+    margin-bottom: 8px;
+  }
 }
 
 hr {
   border: none;
   border-top: 1px solid #d7dde9;
-  width: 100%;
+  width: 272px;
+  margin-top: 0;
+  margin-bottom: 24px;
 }/*# sourceMappingURL=Header.css.map */

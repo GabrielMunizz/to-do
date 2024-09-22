@@ -1,18 +1,27 @@
 @import "../../app/globals.scss";
 
 header {
-  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
+  width: 272px;
+  height: 90px;
+  margin: 24px;  
 
   @media (min-width: $breakpoint-md) {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: calc(100% - 112px);
+    height: 60px;
+    margin: 24px 0;   
   }
 }
 
@@ -23,21 +32,37 @@ header {
 
 .welcome,
 .date {
-  size: 16px;
-  line-height: 19.36px;
-  letter-spacing: -2%;
+  @include text-styles;
   font-weight: 500;
-  margin: 8px;
+  margin: 0;
+  margin-top: 8px;
+}
+
+.welcome {
+  @media (min-width: $breakpoint-md) {
+    margin: 0;
+    font-size: 24px;
+  }
 }
 
 .date {
-  color: #0000008a;
+  height: 19px;
+  color: $black-half-opacity;
   font-weight: 400;
-  margin-bottom: 20px;
+
+  @media (min-width: $breakpoint-md) {
+    margin: 0;    
+  }
 }
 
 hr {
   border: none;
-  border-top: 1px solid $border-color;
-  width: 100%;
+  border-top: 1px solid $hr-color;
+  width: 272px;
+  margin-top: 0;
+  margin-bottom: 24px;
+
+  @media (min-width: $breakpoint-md) {    
+    width: calc(100% - 112px);    
+  }
 }

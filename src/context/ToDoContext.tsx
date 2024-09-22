@@ -13,6 +13,8 @@ type ToDoContextType = {
   saveTask: (newTask: string) => void;
   taskId: number | null;
   setTaskId: Dispatch<SetStateAction<number | null>>;
+  completedTasks: TaskType[];
+  setCompletedTasks: Dispatch<SetStateAction<TaskType[]>>;
   deleteTask: (taskId: number | null) => void;
 };
 
@@ -27,6 +29,7 @@ export const TodoProvider = ({ children }: TodoProviderType) => {
   const [wantToDelete, setWantToDelete] = useState(false);
   const [taskId, setTaskId] = useState<number | null>(null);
   const [tasks, setTasks] = useState<TaskType[]>([]);
+  const [completedTasks, setCompletedTasks] = useState<TaskType[]>([]);
 
   const saveTask = (newTask: string) => {
     const id = tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1;
@@ -61,6 +64,8 @@ export const TodoProvider = ({ children }: TodoProviderType) => {
         taskId,
         setTaskId,
         setTasks,
+        completedTasks,
+        setCompletedTasks,
         deleteTask,
       }}
     >
