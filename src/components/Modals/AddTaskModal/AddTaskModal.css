@@ -75,11 +75,11 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin-bottom: 32px;
 }
 @media (min-width: 767px) {
   .inputContainer {
     width: 100%;
-    margin-bottom: 32px;
   }
 }
 

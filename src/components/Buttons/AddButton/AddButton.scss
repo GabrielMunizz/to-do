@@ -12,6 +12,7 @@
 
 .confirmAdd {
   @extend .addButton;
+  margin-bottom: 16px;
 
   @media (min-width: $breakpoint-md) {
     display: none;

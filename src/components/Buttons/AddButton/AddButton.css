@@ -32,6 +32,9 @@ html {
   }
 }
 
+.confirmAdd {
+  margin-bottom: 16px;
+}
 @media (min-width: 767px) {
   .confirmAdd {
     display: none;
