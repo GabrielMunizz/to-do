@@ -39,7 +39,11 @@
 .taskContainer button,
 .buttonImage {
   width: 24px;
-  height: 24px;
+  height: 24px;  
+}
+
+.taskContainer button:hover {
+  cursor: pointer;
 }
 
 .taskContainer button {

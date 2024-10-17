@@ -21,8 +21,8 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "Teste LegaPlan",
-  description: "Teste LegaPlan por Gabriel Muniz",
+  title: "My to-do",
+  description: "A To-do list made by Gabriel Muniz",
 };
 
 export default function RootLayout({
